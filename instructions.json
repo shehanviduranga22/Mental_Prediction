@@ -1,0 +1,115 @@
+{
+  "intents": [
+    {
+      "tag": "Anxiety",
+      "pattersns": [
+        "😞 It's okay to pause, breathe, and take things step by step. 😞",
+        "🌱 Take a slow breath — you don’t need to rush right now. 🌱",
+        "💛 You are safe in this moment. Focus on one small thing. 💛",
+        "🫶 Anxiety can be hard, but you’re not weak for feeling this way. 🫶",
+        "🌊 Let anxious thoughts pass like waves — they will settle. 🌊",
+        "☁️ Try grounding yourself by noticing what’s around you. ☁️",
+        "🧘‍♂️ Slow breathing can help your body feel calmer. 🧘‍♂️",
+        "🌼 Be kind to yourself — you’re doing your best. 🌼",
+        "⏳ This feeling will ease, even if it feels strong now. ⏳",
+        "🤍 You don’t have to face anxiety alone. 🤍"
+      ]
+    },
+
+    {
+      "tag": "Normal",
+      "pattersns": [
+        "😃 You're doing fine. Keep taking care of yourself. 😃",
+        "🌞 It’s good to see things feeling balanced for you. 🌞",
+        "👍 Keep up the healthy habits that support you. 👍",
+        "😊 Enjoy the moments of calm and positivity. 😊",
+        "✨ You’re handling things well right now. ✨",
+        "🌱 Stay mindful and continue what’s working for you. 🌱",
+        "💙 It’s okay to appreciate feeling okay. 💙",
+        "😄 Keep listening to your needs and emotions. 😄",
+        "🌈 Balance looks good on you today. 🌈",
+        "🤍 Keep going — you’re on a steady path. 🤍"
+      ]
+    },
+
+    {
+      "tag": "Bipolar",
+      "pattersns": [
+        "😶 Keeping a routine can help bring stability. 😶",
+        "🕊️ Be gentle with yourself during emotional changes. 🕊️",
+        "🌱 Small, consistent habits can make a difference. 🌱",
+        "🤝 Staying connected with trusted people can help. 🤝",
+        "⏳ Emotional shifts can pass — you’re not alone. ⏳",
+        "🧠 Noticing your mood patterns can be helpful. 🧠",
+        "💙 Support is important, and it’s okay to ask for it. 💙",
+        "🛌 Rest and balance are valuable for your well-being. 🛌",
+        "🌤️ Take things one day at a time. 🌤️",
+        "🤍 You deserve understanding and care. 🤍"
+      ]
+    },
+
+    {
+      "tag": "Personality disordern",
+      "pattersns": [
+        "😥 Talking with someone you trust can help you feel supported. 😥",
+        "🫶 Your feelings matter, even when they feel confusing. 🫶",
+        "🌱 Growth takes time — be patient with yourself. 🌱",
+        "🤝 Supportive relationships can make a difference. 🤝",
+        "🧠 Understanding your emotions is a strong step forward. 🧠",
+        "💙 You are more than your struggles. 💙",
+        "🌼 Small positive changes can add up. 🌼",
+        "⏳ Healing is a process, not a race. ⏳",
+        "🕊️ It’s okay to seek guidance and support. 🕊️",
+        "🤍 You deserve compassion and respect. 🤍"
+      ]
+    },
+
+    {
+      "tag": "Stress",
+      "pattersns": [
+        "😞 It's okay to slow down and take a breath. 😞",
+        "🧘‍♀️ Short breaks can help reduce stress. 🧘‍♀️",
+        "🌱 Focus on one task at a time. 🌱",
+        "💛 You don’t need to handle everything at once. 💛",
+        "☁️ Try relaxing your body and unclenching your jaw. ☁️",
+        "🌼 Even small rests can help your mind recover. 🌼",
+        "⏳ Stressful moments do pass. ⏳",
+        "🤝 Asking for help is okay. 🤝",
+        "🛌 Rest is productive too. 🛌",
+        "🤍 Take care of yourself — you matter. 🤍"
+      ]
+    },
+
+    {
+      "tag": "Suicidal",
+      "pattersns": [
+        "😳 You’re not alone — reaching out for help is important. 😳",
+        "🤍 Please talk to a trusted adult or professional. 🤍",
+        "🫶 Your life has value, even if it doesn’t feel that way now. 🫶",
+        "🌱 This pain can change, and support can help. 🌱",
+        "📞 Connecting with someone right now can make a difference. 📞",
+        "🕊️ You deserve care, understanding, and safety. 🕊️",
+        "💙 Please don’t face this by yourself. 💙",
+        "🤝 There are people who want to help you. 🤝",
+        "⏳ These feelings can pass with support. ⏳",
+        "🌈 You matter more than you know. 🌈"
+      ]
+    },
+
+    {
+      "tag": "Depression",
+      "pattersns": [
+        "😟 It’s okay to feel low — you’re not alone. 😟",
+        "🌱 Small steps can help, even when energy is low. 🌱",
+        "💙 Try staying connected with someone you trust. 💙",
+        "🫶 Be gentle with yourself during hard days. 🫶",
+        "⏳ Healing takes time, and that’s okay. ⏳",
+        "🌼 Even small moments of care matter. 🌼",
+        "🧠 Your feelings are valid and deserve attention. 🧠",
+        "🤝 Support can help lighten the weight you feel. 🤝",
+        "🌤️ This darkness doesn’t define who you are. 🌤️",
+        "🤍 You deserve kindness — especially from yourself. 🤍"
+      ]
+    }
+  ]
+}
