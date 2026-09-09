@@ -1,0 +1,71 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap');
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { min-height: 100%; }
+body {
+    align-items: center;
+    background: #fff;
+    color: #17132d;
+    display: flex;
+    font-family: Inter, Arial, sans-serif;
+    justify-content: center;
+    overflow-x: hidden;
+}
+.container { min-height: 100vh; padding: 32px 24px; width: min(100%, 1100px); }
+.main { align-items: center; display: flex; flex-direction: column; justify-content: center; min-height: calc(100vh - 64px); position: relative; text-align: center; }
+.error-bg {
+    color: rgba(113, 76, 255, .1);
+    font-family: 'Space Grotesk', Inter, sans-serif;
+    font-size: clamp(150px, 28vw, 300px);
+    font-weight: 800;
+    left: 50%;
+    line-height: .8;
+    position: absolute;
+    top: 7%;
+    transform: translateX(-50%);
+    user-select: none;
+    z-index: 0;
+}
+.monster {
+    background: #fff;
+    border: 1px solid rgba(255, 255, 255, .9);
+    border-radius: 28px;
+    box-shadow: none;
+    aspect-ratio: 16 / 9;
+    height: auto;
+    max-width: 100%;
+    object-fit: contain;
+    position: relative;
+    width: min(760px, 100%);
+    z-index: 1;
+}
+h1 {
+    font-family: 'Space Grotesk', Inter, sans-serif;
+    font-size: clamp(22px, 3vw, 36px);
+    letter-spacing: -1.8px;
+    margin-top: 30px;
+    position: relative;
+    z-index: 1;
+}
+p { color: #6f6680; font-size: 16px; line-height: 1.7; margin: 12px 0 24px; position: relative; z-index: 1; }
+.back-btn {
+    background: linear-gradient(90deg, #9365ff, #48c8f2);
+    border: 0;
+    border-radius: 999px;
+    box-shadow: 0 10px 25px rgba(116, 93, 245, .23);
+    color: #fff;
+    cursor: pointer;
+    font: 700 14px Inter, sans-serif;
+    padding: 14px 25px;
+    position: relative;
+    transition: transform .2s ease, box-shadow .2s ease;
+    z-index: 1;
+}
+.back-btn:hover { box-shadow: 0 14px 30px rgba(116, 93, 245, .32); transform: translateY(-2px); }
+@media (max-width: 600px) {
+    .container { padding: 18px 16px; }
+    .main { min-height: calc(100vh - 36px); }
+    .monster { height: auto; width: 100%; }
+    h1 { letter-spacing: -1px; }
+    p { font-size: 14px; }
+}
