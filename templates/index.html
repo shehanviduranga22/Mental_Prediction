@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MindMirror — Wellness Signals</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <div class="page">
+    <header>
+      <div class="container">
+        <nav>
+          <a href="{{ url_for('error') }}" class="brand" aria-label="Open MindMirror error page">
+            <div class="brand-icon">m</div>
+            <div>
+              <div class="brand-name">MindMirror</div>
+              <div class="brand-sub">WELLNESS SIGNALS</div>
+            </div>
+          </a>
+          <div class="nav-links">
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#login" class="login-btn">Login</a>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <main id="home">
+      <div class="container">
+        <section class="hero">
+          <div class="hero-content">
+            <span class="badge"><span class="badge-dot"></span>PREDICTIVE WELLNESS</span>
+            {% if user %}<p class="user-greeting">Welcome back, {{ user }}.</p>{% endif %}
+            <h1>Feel your <span class="gradient">mind</span><br>before it happens.</h1>
+            <p class="hero-description">Describe how you're feeling today. MindMirror reads the signals in your words and reflects your current emotional state — so you can act early.</p>
+            <div class="chips">
+              <span class="chip active">Sleep patterns</span>
+              <span class="chip">Stress signals</span>
+              <span class="chip">Mood reflection</span>
+            </div>
+          </div>
+
+          <div class="check-card">
+            <div class="card-heading">
+              <h2>Check my status</h2>
+              <span class="daily">DAILY</span>
+            </div>
+            <div class="question">HOW ARE YOU FEELING RIGHT NOW?</div>
+            <form id="predictForm" action="{{ url_for('predict') }}" method="post">
+              <textarea id="feeling" name="search" placeholder="I've been restless at night, snapping at small things, and my focus keeps slipping..." required></textarea>
+              <button class="check-btn" type="submit">Check my status</button>
+            </form>
+            <div id="result" class="result" role="status"></div>
+          </div>
+        </section>
+
+        <section class="steps" id="how-it-works">
+          <div class="step"><div class="number">01</div><h3>Describe</h3><p>Type freely about your mood, sleep, and energy. Natural language in, signals out.</p></div>
+          <div class="step"><div class="number">02</div><h3>Analyze</h3><p>Our model maps your words against wellness signals in real time.</p></div>
+          <div class="step"><div class="number">03</div><h3>Reflect</h3><p>Get a gentle status read with small, actionable steps to protect your headspace.</p></div>
+        </section>
+      </div>
+    </main>
+
+    <section class="about" id="about">
+      <div class="container">
+        <h2 class="section-title">About MindMirror</h2>
+        <div class="section-text">
+          <p>Mind Mirror is an artificial intelligence powered platform designed to help users reflect on their emotional experiences through natural language.</p>
+          <p>The system analyses the information provided by users and identifies meaningful emotional patterns and contextual signals. Instead of replacing professional mental health services, Mind Mirror aims to provide an accessible first step toward self-awareness and reflection.</p>
+          <p>The conceptual vision for this project was developed by Pramudi Nawanjana (BSc. Honours Degree in Computer Science and Technology).</p>
+          <p>The technical development of the platform was led by Shehan Viduranga (BSc. Honours Degree in Computer Science and Technology) and Kaveesha Ridmi (BSc. Honours Degree in Computer Science and Technology).</p>
+          <p>Through this collaboration, the team combines artificial intelligence, natural language processing and thoughtful user experience design to create a platform that encourages users to better understand their thoughts and emotions.</p>
+          <p class="about-tagline">Mind Mirror — Understand yourself a little better.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="login-modal" id="login" aria-hidden="true">
+      <div class="login-panel" role="dialog" aria-modal="true" aria-labelledby="loginTitle">
+        <button class="login-close" id="closeLogin" type="button" aria-label="Close login">&times;</button>
+        <p class="login-eyebrow">Welcome back</p>
+        <h2 id="loginTitle">Continue your reflection.</h2>
+        <p class="login-copy">Sign in to return to your MindMirror space.</p>
+        {% if account_message %}<p class="account-message" role="status">{{ account_message }}</p>{% endif %}
+        {% if login_error %}<p class="login-error" role="alert">{{ login_error }}</p>{% endif %}
+        <form class="login-box" action="{{ url_for('newlogin') }}" method="post" autocomplete="off">
+          <input type="text" name="loginUserName" placeholder="Username" required>
+          <input type="password" name="loginPassword" placeholder="Password" required>
+          <button type="submit">Login</button>
+          <button class="register-link" id="showRegister" type="button">Create an account</button>
+        </form>
+      </div>
+    </section>
+
+    <section class="login-modal" id="register" aria-hidden="true">
+      <div class="login-panel" role="dialog" aria-modal="true" aria-labelledby="registerTitle">
+        <button class="login-close" id="closeRegister" type="button" aria-label="Close registration">&times;</button>
+        <p class="login-eyebrow">Begin your check-in</p>
+        <h2 id="registerTitle">Create your account.</h2>
+        <p class="login-copy">Keep your reflections close and private.</p>
+        <form class="login-box" action="{{ url_for('signup') }}" method="post" autocomplete="off">
+          <input type="text" name="loginUserName" placeholder="Username" required>
+          <input type="email" name="loginEmail" placeholder="Email address" required>
+          <input type="password" name="loginPassword" placeholder="Create password" required>
+          <button type="submit">Create account</button>
+          <button class="register-link" id="backToLogin" type="button">Back to login</button>
+        </form>
+      </div>
+    </section>
+
+    <footer>© 2026 MindMirror — Wellness Signals</footer>
+  </div>
+
+  <script>
+    const predictForm = document.getElementById('predictForm');
+    const result = document.getElementById('result');
+
+    predictForm.addEventListener('submit', async (event) => {
+      event.preventDefault();
+      const button = predictForm.querySelector('button');
+      button.disabled = true;
+      button.textContent = 'Reading your signals...';
+      result.style.display = 'block';
+      result.textContent = 'Reflecting on your words...';
+
+      try {
+        const response = await fetch(predictForm.action, {
+          method: 'POST',
+          body: new URLSearchParams(new FormData(predictForm))
+        });
+        const data = await response.json();
+        if (!response.ok) throw new Error(data.message || 'Unable to complete the status check.');
+        result.innerHTML = `<strong>${data.prediction}.</strong><br>${data.instruction}`;
+      } catch (error) {
+        result.textContent = error.message;
+      } finally {
+        button.disabled = false;
+        button.textContent = 'Check my status';
+      }
+    });
+
+    const loginModal = document.getElementById('login');
+    const registerModal = document.getElementById('register');
+    const closeLogin = document.getElementById('closeLogin');
+    const closeRegister = document.getElementById('closeRegister');
+    const loginButton = document.querySelector('.login-btn');
+    const showRegister = document.getElementById('showRegister');
+    const backToLogin = document.getElementById('backToLogin');
+
+    function openLogin(event) {
+      event.preventDefault();
+      loginModal.classList.add('is-open');
+      loginModal.setAttribute('aria-hidden', 'false');
+      loginModal.querySelector('input').focus();
+    }
+
+    function hideLogin() {
+      loginModal.classList.remove('is-open');
+      loginModal.setAttribute('aria-hidden', 'true');
+    }
+
+    function openRegister(event) {
+      event.preventDefault();
+      hideLogin();
+      registerModal.classList.add('is-open');
+      registerModal.setAttribute('aria-hidden', 'false');
+      registerModal.querySelector('input').focus();
+    }
+
+    function hideRegister() {
+      registerModal.classList.remove('is-open');
+      registerModal.setAttribute('aria-hidden', 'true');
+    }
+
+    loginButton.addEventListener('click', openLogin);
+    closeLogin.addEventListener('click', hideLogin);
+    showRegister.addEventListener('click', openRegister);
+    closeRegister.addEventListener('click', hideRegister);
+    backToLogin.addEventListener('click', () => {
+      hideRegister();
+      loginModal.classList.add('is-open');
+      loginModal.setAttribute('aria-hidden', 'false');
+      loginModal.querySelector('input').focus();
+    });
+    loginModal.addEventListener('click', (event) => {
+      if (event.target === loginModal) hideLogin();
+    });
+    registerModal.addEventListener('click', (event) => {
+      if (event.target === registerModal) hideRegister();
+    });
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape') {
+        hideLogin();
+        hideRegister();
+      }
+    });
+
+    if (window.location.hash === '#login') {
+      openLogin({ preventDefault: () => {} });
+    }
+
+    if (window.location.hash === '#register') {
+      openRegister({ preventDefault: () => {} });
+    }
+
+    {% if account_error %}
+    registerModal.querySelector('.login-copy').textContent = {{ account_error|tojson }};
+    {% endif %}
+
+    {% if login_error %}
+    loginModal.classList.add('is-open');
+    loginModal.setAttribute('aria-hidden', 'false');
+    {% endif %}
+  </script>
+</body>
+</html>

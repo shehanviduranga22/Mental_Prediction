@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>404 – Page Not Found</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='error.css') }}" />
+  </head>
+  <body>
+    <div class="container">
+      
+      <!-- Main Content -->
+      <main class="main">
+        <div class="error-bg">404</div>
+
+        <video class="monster" autoplay loop muted>
+          <source src="{{ url_for('static', filename='videos/origi.mp4') }}" type="video/mp4" />
+        </video>
+
+        <h1>Oops, I think we’re lost…</h1>
+        <p>Let’s get you back to somewhere familiar.</p>
+
+        <button class="back-btn" onclick="goToPredict()">Back Home</button>
+      </main>
+    </div>
+  </body>
+
+  <script>
+    function goToPredict() {
+            window.location.href = "{{ url_for('index') }}";
+        }
+  </script>
+</html>
